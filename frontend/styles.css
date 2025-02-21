@@ -1,0 +1,104 @@
+/* Full-screen background */
+body {
+
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    flex-direction: column;
+    
+}
+
+/* Auth Buttons (Login & Sign Up) */
+.auth-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    border: 2px solid white;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.auth-buttons button:hover {
+    background: rgba(255, 255, 255, 0.603);
+}
+
+* Floating Image (Above the Door) */
+.floating-image {
+    position: absolute;
+    top: 50%;
+    animation: floatImage 10s infinite ease-in-out alternate;
+}
+
+.floating-image img {
+    width: 200px; /* Adjust size */
+    filter: drop-shadow(0px 0px 15px rgba(255, 255, 2, 0.8));
+    animation: floatImage 3s  ease-in-out infinite;
+}
+
+/* Mystical door */
+.door-container {
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0; /* Initially hidden */
+    animation: fade-in 2s ease-in-out forwards;
+}
+
+.door-container img {
+    width: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect - adds a glow */
+.door-container:hover img {
+    transform: scale(1.1);
+    
+}
+
+/* Zoom-in effect */
+.zoom {
+    transform: scale(3);
+    opacity: 10;
+    transition: transform 2.2s ease-in-out, opacity 3.2s ease-in-out;
+}
+.door-container:hover {
+    filter: drop-shadow(0 0 25px rgba(255, 250, 100, 0.5));
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* Fade-in animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

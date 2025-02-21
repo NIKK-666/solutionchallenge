@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Aptitude Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #00aaff;
+        }
+
+        .question {
+            margin: 15px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .options {
+            text-align: left;
+            margin: 10px 0;
+        }
+
+        .options label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .btn {
+            background: #00aaff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #0088cc;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>AI-Powered Career Aptitude Test</h2>
+
+        <div id="questions-container"></div>
+
+        <button class="btn" onclick="analyzeResponses()">Submit</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const questions = [
+            { q: "1. You enjoy working on:", options: ["Numbers & data", "Creative projects", "Team collaboration", "Technology & coding"] },
+            { q: "2. When faced with a problem, you:", options: ["Use logic & analysis", "Think outside the box", "Talk to others for ideas", "Experiment with solutions"] },
+            { q: "3. Which career excites you the most?", options: ["Engineering / Data Science", "Art / Design", "Business / Marketing", "Entrepreneurship / Innovation"] },
+            { q: "4. In a team project, your role is:", options: ["Problem solver", "Creative thinker", "Leader", "Technical expert"] },
+            { q: "5. If you had to solve a crisis, how would you handle it?", options: ["Analyze & create a plan", "Find an innovative solution", "Motivate the team", "Use technical skills"] },
+            { q: "6. What type of work environment do you prefer?", options: ["Structured & logical", "Creative & flexible", "Fast-paced & interactive", "Independent & tech-driven"] },
+            { q: "7. If given a chance, what would you rather create?", options: ["An AI-powered software", "A beautiful art piece", "A successful startup", "A new scientific theory"] },
+            { q: "8. How do you define success?", options: ["Making an impact through innovation", "Bringing ideas to life", "Helping & leading people", "Creating tech-driven solutions"] }
+        ];
+
+        function loadQuestions() {
+            let container = document.getElementById("questions-container");
+            questions.forEach((q, index) => {
+                let html = `<div class="question">${q.q}</div><div class="options">`;
+                q.options.forEach((opt, i) => {
+                    html += `<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`;
+                });
+                html += `</div>`;
+                container.innerHTML += html;
+            });
+        }
+
+        function analyzeResponses() {
+            let scores = { "tech": 0, "creative": 0, "business": 0, "leadership": 0 };
+
+            questions.forEach((q, index) => {
+                let selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selected) {
+                    let value = parseInt(selected.value);
+                    if (value === 0) scores.tech += 1;
+                    if (value === 1) scores.creative += 1;
+                    if (value === 2) scores.business += 1;
+                    if (value === 3) scores.leadership += 1;
+                }
+            });
+
+            let resultText = "";
+            let maxScore = Math.max(scores.tech, scores.creative, scores.business, scores.leadership);
+
+            if (scores.tech === maxScore) {
+                resultText = "🚀 You are a tech enthusiast! Careers in **Software Development, AI, Data Science, or Cybersecurity** suit you!";
+            } else if (scores.creative === maxScore) {
+                resultText = "🎨 You have a creative mind! Consider **Graphic Design, Writing, UI/UX, or Film Making**.";
+            } else if (scores.business === maxScore) {
+                resultText = "📈 You are business-oriented! **Marketing, Finance, Business Analytics, or Sales** could be a great fit!";
+            } else if (scores.leadership === maxScore) {
+                resultText = "💼 You are a natural leader! Careers in **Management, Entrepreneurship, HR, or Public Relations** may suit you.";
+            }
+
+            document.getElementById("result").innerHTML = resultText;
+        }
+
+        loadQuestions();
+    </script>
+
+	<script>
+    firebase.auth().onAuthStateChanged(user => {
+        if (!user) {
+            window.location.href = "login.html"; // Redirect if not logged in
+        }
+    });
+</script>
+
+</body>
+</html>

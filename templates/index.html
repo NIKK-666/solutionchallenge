@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Assessment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Career Assessment</h1>
+        <form action="/predict" method="POST">
+            <label for="problem_solving">Problem-Solving Score:</label>
+            <input type="number" id="problem_solving" name="problem_solving" required>
+
+            <label for="decision_making">Decision-Making Score:</label>
+            <input type="number" id="decision_making" name="decision_making" required>
+
+            <label for="work_environment">Work-Environment Score:</label>
+            <input type="number" id="work_environment" name="work_environment" required>
+
+            <label for="stress_response">Stress-Response Score:</label>
+            <input type="number" id="stress_response" name="stress_response" required>
+
+            <label for="communication">Communication Score:</label>
+            <input type="number" id="communication" name="communication" required>
+
+            <label for="logical_reasoning">Logical-Reasoning Score:</label>
+            <input type="number" id="logical_reasoning" name="logical_reasoning" required>
+
+            <label for="spatial_awareness">Spatial-Awareness Score:</label>
+            <input type="number" id="spatial_awareness" name="spatial_awareness" required>
+
+            <label for="emotional_intelligence">Emotional-Intelligence Score:</label>
+            <input type="number" id="emotional_intelligence" name="emotional_intelligence" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
