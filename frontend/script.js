@@ -10,7 +10,7 @@ function openDoor() {
 
     // Redirect after animation
     setTimeout(() => {
-       window.location.href = 'questions.html';
+       window.location.href = 'index.html';
     }, 1200);
 }
 
