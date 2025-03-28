@@ -35,7 +35,7 @@ const oldmanLines = { english, french };
 
 // ✅ AI Response Function (Fetches from Gemini API)
 async function getAIResponse(userInput) {
-  const apiKey = "AIzaSyDthTnXfdZogV1BRtUVg9Z5uzpLDgDe-1Q"; // Replace with your actual API key
+  const apiKey = ""; // Replace with your actual API key
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
   try {
