@@ -13,29 +13,29 @@ The AI-Driven Career Guidance Platform is designed to help individuals find suit
 - **Web-Based Platform**: User-friendly interface for seamless navigation.
 
 ## Technologies Used
-- Frontend: HTML, CSS, JavaScript
-- Backend: Flask (Python)
-- Database: Firebase / Firestore
-- AI Model: Gemini AI for career guidance and recommendation
-- Google Cloud Services: For hosting and data processing
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Flask (Python)
+- **Database**: Firebase / Firestore
+- **AI Model**: Gemini AI for career guidance and recommendation
+- **Google Cloud Services**: For hosting and data processing
 
 ## Installation & Setup
 1. Clone the repository:
-   
+   ```bash
    git clone https://github.com/NIKK-666/solutionchallenge.git
-  
+   ```
 2. Navigate to the project directory:
-   
+   ```bash
    cd solutionchallenge
-   
+   ```
 3. Install dependencies:
-   
+   ```bash
    pip install -r requirements.txt
-   
+   ```
 4. Run the application:
-   
+   ```bash
    python app.py
-   
+   ```
 5. Open your browser and go to `http://localhost:5000/`
 
 ## Contributing
@@ -47,9 +47,9 @@ We welcome contributions! If you'd like to improve the platform, follow these st
 
 ## Contact
 For any inquiries or contributions, feel free to reach out:
-- Developer: Nikhil Barman
-- Email: monkeydnikk23@gmail.com 
-- LinkedIn: https://www.linkedin.com/in/nikhil-barman-237514296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+- **Developer**: Nikhil Barman
+- **Email**: monkeydnikk23@gmail.com 
+- **LinkedIn**: https://www.linkedin.com/in/nikhil-barman-237514296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
